@@ -33,13 +33,13 @@ const NftDetail = () => {
     const tokenIdMetadata = await Web3Api.token.getTokenIdMetadata(options);
     const metadata = await axios.get(tokenIdMetadata.metadata);
 
-    console.log(metadata);
+    console.log(metadata.data);
     const item = {
-      name: metadata.name,
+      name: metadata.data.name,
       metadataItem: tokenIdMetadata.metadata,
-      description: metadata.description,
+      description: metadata.data.description,
       tokenId: tokenIdMetadata.token_id,
-      image: metadata.image,
+      image: metadata.data.image,
       owner: tokenIdMetadata.owner_of,
     };
 
