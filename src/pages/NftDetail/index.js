@@ -41,7 +41,7 @@ const NftDetail = () => {
       owner: tokenIdMetadata.owner_of,
     };
 
-    return tokenIdMetadata;
+    return item;
   };
 
   console.log(fetchIndividualEns());
