@@ -39,16 +39,17 @@ const NftDetail = () => {
       metadataItem: metadata,
       description: metadata.description,
       tokenId: tokenIdMetadata.token_id,
-      image: metadata.image,
+      image: metadata.image_url,
       owner: tokenIdMetadata.owner_of,
     };
-
+    setEnsNft(item);
     return item;
   };
 
   console.log(fetchIndividualEns());
+  console.log(ensNft);
 
-  return <div>NftDetail</div>;
+  return <div></div>;
 };
 
 export default NftDetail;
