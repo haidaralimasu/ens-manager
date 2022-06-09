@@ -34,10 +34,10 @@ const NftDetail = () => {
     const metadata = await axios.get(tokenIdMetadata.metadata);
 
     const item = {
-      // name: metadata.name,
-      // description: metadata.description,
+      name: metadata.name,
+      description: metadata.description,
       tokenId: tokenIdMetadata.token_id,
-      // image: metadata.image,
+      image: metadata.image,
       owner: tokenIdMetadata.owner_of,
     };
 
