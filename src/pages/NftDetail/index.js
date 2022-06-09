@@ -46,10 +46,16 @@ const NftDetail = () => {
     return item;
   };
 
-  console.log(fetchIndividualEns());
+  // console.log(fetchIndividualEns());
   console.log(ensNft);
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>{ensNft.name}</h1>
+      <h2>{JSON.stringify(ensNft)}</h2>
+      <img src={ensNft.image} />
+    </div>
+  );
 };
 
 export default NftDetail;
