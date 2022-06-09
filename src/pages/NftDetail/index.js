@@ -31,15 +31,15 @@ const NftDetail = () => {
       chain: "eth",
     };
     const tokenIdMetadata = await Web3Api.token.getTokenIdMetadata(options);
-    const metadata = await axios.get(tokenIdMetadata.metadata);
+    const metadata = JSON.parse(tokenIdMetadata.metadata);
 
-    console.log(metadata.data);
+    console.log();
     const item = {
-      name: metadata.data.name,
-      metadataItem: tokenIdMetadata.metadata,
-      description: metadata.data.description,
+      name: metadata.name,
+      metadataItem: metadata,
+      description: metadata.description,
       tokenId: tokenIdMetadata.token_id,
-      image: metadata.data.image,
+      image: metadata.image,
       owner: tokenIdMetadata.owner_of,
     };
 
