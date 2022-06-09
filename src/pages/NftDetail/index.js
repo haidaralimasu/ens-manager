@@ -52,7 +52,6 @@ const NftDetail = () => {
   return (
     <div>
       <h1>{ensNft.name}</h1>
-      <h2>{JSON.stringify(ensNft)}</h2>
       <img src={ensNft.image} />
     </div>
   );
