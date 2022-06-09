@@ -4,6 +4,7 @@ import { useEthers } from "@usedapp/core";
 import { useMoralisWeb3Api } from "react-moralis";
 import { address } from "../../contract/address";
 import axios from "axios";
+import { Detail } from "../../components";
 
 const NftDetail = () => {
   const { id } = useParams();
@@ -33,7 +34,7 @@ const NftDetail = () => {
     const tokenIdMetadata = await Web3Api.token.getTokenIdMetadata(options);
     const metadata = JSON.parse(tokenIdMetadata.metadata);
 
-    console.log();
+    console.log(tokenIdMetadata);
     const item = {
       name: metadata.name,
       metadataItem: metadata,
@@ -50,9 +51,14 @@ const NftDetail = () => {
   console.log(ensNft);
 
   return (
-    <div>
-      <h1>{ensNft.name}</h1>
-      <img src={ensNft.image} />
+    <div className="container-fluid">
+      <Detail
+        image={ensNft.image}
+        name={ensNft.name}
+        tokenId={ensNft.tokenId}
+        description={ensNft.description}
+        owner={ensNft.owner}
+      />
     </div>
   );
 };
